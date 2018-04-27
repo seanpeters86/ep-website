@@ -1,0 +1,19 @@
+<span sm-scene="recruitment_navswap" offset="0" trigger-hook="0"></span>
+
+<div class="recruitment-nav-wrapper">
+    <nav>
+        <button v-pressable class="recruit-button-fade" class-icon="" ng-hide="$state.includes('welcome')" ui-sref="welcome" ui-sref-active="active"><span>Welcome Letter from EP</span>
+            <v-ripple></v-ripple></button>
+        <button v-pressable class="recruit-button-fade" class-icon="" ui-sref="apply" ng-hide="$state.includes('apply')" ui-sref-active="active"><span>Apply to the Guild</span>
+            <v-ripple></v-ripple></button>
+    </nav>
+</div>
+<div id="recruitment-subwrapper">
+    <div id="recruitment-container">
+        <div ui-view="subcontent" autoscroll="false" class="fade-parent fade-children content">
+
+        </div>
+    </div>
+</div>
+
+

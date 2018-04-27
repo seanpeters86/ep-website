@@ -1,0 +1,11 @@
+<div id="roster-wrapper">
+	<span sm-scene="rosterHeader" duration="vm.durationheight" offset="0" trigger-hook="0" ></span>
+	<div class="bg">
+		<div class="text" sm-tween="rosterHeader"  from-vars="vm.headerFrom" to-vars="vm.headerTo">
+			<span  data-fittext data-fittext-min="14" data-fittext-load-delay="500" data-fittext-max="50">{{data.title}}</span>
+		</div>
+		<div class="current-roster">
+			<a href="{{data.currentRosterLink}}"><div>{{data.currentRosterText}}</div></a>
+		</div>
+	</div>
+</div>

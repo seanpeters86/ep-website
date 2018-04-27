@@ -1,0 +1,508 @@
+
+<div id="topform" ng-controller="signupController">
+    <div ng-switch on="mytype" class="my-switch-container">
+        <div ng-switch-when="0" class="my-switch-animation">
+            <form name="signup_form" novalidate ng-submit="signupForm()">
+                <fieldset>
+                    <div class="form-section">
+                        <!-- Real Name -->
+                        <div class="group-4">
+                            <label>What is your real name?</label>
+                            <input ng-model-options="{ updateOn: 'default', debounce: {'default': 500, 'blur': 0} }"
+                                   type="text" placeholder="Name" name="irl" ng-model="signup.irl"
+                                   required ng-maxlength="1000"/>
+
+                            <div class="error  error-fade"
+                                 ng-show="signup_form.irl.$dirty && signup_form.irl.$invalid">
+                                <small class="error small-error-fade"
+                                       ng-show="signup_form.irl.$error.required">
+                                    Your real name is required.
+                                </small>
+                                <small class="error small-fade-error"
+                                       ng-show="signup_form.irl.$error.maxlength">
+                                    Please write less than 1000 chars per field.
+                                </small>
+                            </div>
+                        </div>
+                        <!-- Raiding Class -->
+                        <div class="group-4">
+                            <label>What class do you plan on raiding with?</label>
+                            <input ng-model-options="{ updateOn: 'default', debounce: {'default': 500, 'blur': 0} }"
+                                   type="text" placeholder="Class" name="wowclass" ng-model="signup.wowclass"
+                                   required  ng-maxlength="1000"/>
+
+                            <div class="error  error-fade"
+                                 ng-show="signup_form.wowclass.$dirty && signup_form.wowclass.$invalid">
+                                <small class="error small-error-fade"
+                                       ng-show="signup_form.wowclass.$error.required">
+                                    Your class is required.
+                                </small>
+
+                                <small class="error small-fade-error"
+                                       ng-show="signup_form.wowclass.$error.maxlength">
+                                    Please write less than 1000 chars per field.
+                                </small>
+                            </div>
+                        </div>
+                        <!-- Raiding Spec -->
+                        <div class="group-4">
+                            <label>What spec do you plan on raiding with?</label>
+                            <input ng-model-options="{ updateOn: 'default', debounce: {'default': 500, 'blur': 0} }"
+                                   type="text" placeholder="Spec" name="wowspec" ng-model="signup.wowspec"
+                                   required  ng-maxlength="1000"/>
+
+                            <div class="error  error-fade"
+                                 ng-show="signup_form.wowspec.$dirty && signup_form.wowspec.$invalid">
+                                <small class="error small-error-fade"
+                                       ng-show="signup_form.wowspec.$error.required">
+                                    Your spec is required.
+                                </small>
+
+                                <small class="error small-fade-error"
+                                       ng-show="signup_form.wowspec.$error.maxlength">
+                                    Please write less than 1000 chars per field.
+                                </small>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Name -->
+                    <div class="form-section">
+                        <div class="group-4">
+                            <label>Character Name</label>
+                            <input ng-model-options="{ updateOn: 'default', debounce: {'default': 500, 'blur': 0} }"
+                                   type="text" placeholder="Name" name="name" ng-model="signup.name"
+                                   ng-minlength=2
+                                   required  ng-maxlength="1000"/>
+
+                            <div class="error  error-fade"
+                                 ng-show="signup_form.name.$dirty && signup_form.name.$invalid">
+                                <small class="error small-error-fade"
+                                       ng-show="signup_form.name.$error.required">
+                                    Your in-game name is required.
+                                </small>
+                                <small class="error small-error-fade"
+                                       ng-show="signup_form.name.$error.minlength">
+                                    Your in-game name is required to be at least 2 characters
+                                </small>
+                                <small class="error small-error-fade"
+                                       ng-show="signup_form.name.$error.maxlength">
+                                    Your in-game name cannot be longer than 30 characters
+                                </small>
+
+                                <small class="error small-fade-error"
+                                       ng-show="signup_form.name.$error.maxlength">
+                                    Please write less than 1000 chars per field.
+                                </small>
+                            </div>
+                        </div>
+
+                        <div class="group-4">
+                            <label>Are you on Arthas?</label>
+                            <select ng-model-options="{ updateOn: 'default', debounce: {'default': 500, 'blur': 0} }"
+                                    ng-model="signup.realm" name="realm" ng-minlength=2 required id="cboRealm"><option value="">-- choose a realm --</option><option value="Arthas">Arthas</option><option value="Aegwynn">Aegwynn</option><option value="Aerie Peak">Aerie Peak</option><option value="Agamaggan">Agamaggan</option><option value="Aggramar">Aggramar</option><option value="Akama">Akama</option><option value="Alexstrasza">Alexstrasza</option><option value="Alleria">Alleria</option><option value="Altar of Storms">Altar of Storms</option><option value="Alterac Mountains">Alterac Mountains</option><option value="Aman'Thul">Aman'Thul</option><option value="Andorhal">Andorhal</option><option value="Anetheron">Anetheron</option><option value="Antonidas">Antonidas</option><option value="Anub'arak">Anub'arak</option><option value="Anvilmar">Anvilmar</option><option value="Arathor">Arathor</option><option value="Archimonde">Archimonde</option><option value="Area 52">Area 52</option><option value="Argent Dawn">Argent Dawn</option><option value="Arygos">Arygos</option><option value="Auchindoun">Auchindoun</option><option value="Azgalor">Azgalor</option><option value="Azjol-Nerub">Azjol-Nerub</option><option value="Azralon">Azralon</option><option value="Azshara">Azshara</option><option value="Azuremyst">Azuremyst</option><option value="Baelgun">Baelgun</option><option value="Balnazzar">Balnazzar</option><option value="Barthilas">Barthilas</option><option value="Black Dragonflight">Black Dragonflight</option><option value="Blackhand">Blackhand</option><option value="Blackrock">Blackrock</option><option value="Blackwater Raiders">Blackwater Raiders</option><option value="Blackwing Lair">Blackwing Lair</option><option value="Bladefist">Bladefist</option><option value="Blade's Edge">Blade's Edge</option><option value="Bleeding Hollow">Bleeding Hollow</option><option value="Blood Furnace">Blood Furnace</option><option value="Bloodhoof">Bloodhoof</option><option value="Bloodscalp">Bloodscalp</option><option value="Bonechewer">Bonechewer</option><option value="Borean Tundra">Borean Tundra</option><option value="Boulderfist">Boulderfist</option><option value="Bronzebeard">Bronzebeard</option><option value="Burning Blade">Burning Blade</option><option value="Burning Legion">Burning Legion</option><option value="Caelestrasz">Caelestrasz</option><option value="Cairne">Cairne</option><option value="Cenarion Circle">Cenarion Circle</option><option value="Cenarius">Cenarius</option><option value="Cho'gall">Cho'gall</option><option value="Chromaggus">Chromaggus</option><option value="Coilfang">Coilfang</option><option value="Crushridge">Crushridge</option><option value="Daggerspine">Daggerspine</option><option value="Dalaran">Dalaran</option><option value="Dalvengyr">Dalvengyr</option><option value="Dark Iron">Dark Iron</option><option value="Darkspear">Darkspear</option><option value="Darrowmere">Darrowmere</option><option value="Dath'Remar">Dath'Remar</option><option value="Dawnbringer">Dawnbringer</option><option value="Deathwing">Deathwing</option><option value="Demon Soul">Demon Soul</option><option value="Dentarg">Dentarg</option><option value="Destromath">Destromath</option><option value="Dethecus">Dethecus</option><option value="Detheroc">Detheroc</option><option value="Doomhammer">Doomhammer</option><option value="Draenor">Draenor</option><option value="Dragonblight">Dragonblight</option><option value="Dragonmaw">Dragonmaw</option><option value="Draka">Draka</option><option value="Drakkari">Drakkari</option><option value="Drak'Tharon">Drak'Tharon</option><option value="Drak'thul">Drak'thul</option><option value="Dreadmaul">Dreadmaul</option><option value="Drenden">Drenden</option><option value="Dunemaul">Dunemaul</option><option value="Durotan">Durotan</option><option value="Duskwood">Duskwood</option><option value="Earthen Ring">Earthen Ring</option><option value="Echo Isles">Echo Isles</option><option value="Eitrigg">Eitrigg</option><option value="Eldre'Thalas">Eldre'Thalas</option><option value="Elune">Elune</option><option value="Emerald Dream">Emerald Dream</option><option value="Eonar">Eonar</option><option value="Eredar">Eredar</option><option value="Executus">Executus</option><option value="Exodar">Exodar</option><option value="Farstriders">Farstriders</option><option value="Feathermoon">Feathermoon</option><option value="Fenris">Fenris</option><option value="Firetree">Firetree</option><option value="Fizzcrank">Fizzcrank</option><option value="Frostmane">Frostmane</option><option value="Frostmourne">Frostmourne</option><option value="Frostwolf">Frostwolf</option><option value="Galakrond">Galakrond</option><option value="Gallywix">Gallywix</option><option value="Garithos">Garithos</option><option value="Garona">Garona</option><option value="Garrosh">Garrosh</option><option value="Ghostlands">Ghostlands</option><option value="Gilneas">Gilneas</option><option value="Gnomeregan">Gnomeregan</option><option value="Goldrinn">Goldrinn</option><option value="Gorefiend">Gorefiend</option><option value="Gorgonnash">Gorgonnash</option><option value="Greymane">Greymane</option><option value="Grizzly Hills">Grizzly Hills</option><option value="Gul'dan">Gul'dan</option><option value="Gundrak">Gundrak</option><option value="Gurubashi">Gurubashi</option><option value="Hakkar">Hakkar</option><option value="Haomarush">Haomarush</option><option value="Hellscream">Hellscream</option><option value="Hydraxis">Hydraxis</option><option value="Hyjal">Hyjal</option><option value="Icecrown">Icecrown</option><option value="Illidan">Illidan</option><option value="Jaedenar">Jaedenar</option><option value="Jubei'Thos">Jubei'Thos</option><option value="Kael'thas">Kael'thas</option><option value="Kalecgos">Kalecgos</option><option value="Kargath">Kargath</option><option value="Kel'Thuzad">Kel'Thuzad</option><option value="Khadgar">Khadgar</option><option value="Khaz Modan">Khaz Modan</option><option value="Khaz'goroth">Khaz'goroth</option><option value="Kil'jaeden">Kil'jaeden</option><option value="Kilrogg">Kilrogg</option><option value="Kirin Tor">Kirin Tor</option><option value="Korgath">Korgath</option><option value="Korialstrasz">Korialstrasz</option><option value="Kul Tiras">Kul Tiras</option><option value="Laughing Skull">Laughing Skull</option><option value="Lethon">Lethon</option><option value="Lightbringer">Lightbringer</option><option value="Lightninghoof">Lightninghoof</option><option value="Lightning's Blade">Lightning's Blade</option><option value="Llane">Llane</option><option value="Lothar">Lothar</option><option value="Madoran">Madoran</option><option value="Maelstrom">Maelstrom</option><option value="Magtheridon">Magtheridon</option><option value="Maiev">Maiev</option><option value="Malfurion">Malfurion</option><option value="Mal'Ganis">Mal'Ganis</option><option value="Malorne">Malorne</option><option value="Malygos">Malygos</option><option value="Mannoroth">Mannoroth</option><option value="Medivh">Medivh</option><option value="Misha">Misha</option><option value="Mok'Nathal">Mok'Nathal</option><option value="Moon Guard">Moon Guard</option><option value="Moonrunner">Moonrunner</option><option value="Mug'thol">Mug'thol</option><option value="Muradin">Muradin</option><option value="Nagrand">Nagrand</option><option value="Nathrezim">Nathrezim</option><option value="Nazgrel">Nazgrel</option><option value="Nazjatar">Nazjatar</option><option value="Nemesis">Nemesis</option><option value="Ner'zhul">Ner'zhul</option><option value="Nesingwary">Nesingwary</option><option value="Nordrassil">Nordrassil</option><option value="Norgannon">Norgannon</option><option value="Onyxia">Onyxia</option><option value="Perenolde">Perenolde</option><option value="Proudmoore">Proudmoore</option><option value="Quel'dorei">Quel'dorei</option><option value="Quel'Thalas">Quel'Thalas</option><option value="Ragnaros">Ragnaros</option><option value="Ravencrest">Ravencrest</option><option value="Ravenholdt">Ravenholdt</option><option value="Rexxar">Rexxar</option><option value="Rivendare">Rivendare</option><option value="Runetotem">Runetotem</option><option value="Sargeras">Sargeras</option><option value="Saurfang">Saurfang</option><option value="Scarlet Crusade">Scarlet Crusade</option><option value="Scilla">Scilla</option><option value="Sen'jin">Sen'jin</option><option value="Sentinels">Sentinels</option><option value="Shadow Council">Shadow Council</option><option value="Shadowmoon">Shadowmoon</option><option value="Shadowsong">Shadowsong</option><option value="Shandris">Shandris</option><option value="Shattered Halls">Shattered Halls</option><option value="Shattered Hand">Shattered Hand</option><option value="Shu'halo">Shu'halo</option><option value="Silver Hand">Silver Hand</option><option value="Silvermoon">Silvermoon</option><option value="Sisters of Elune">Sisters of Elune</option><option value="Skullcrusher">Skullcrusher</option><option value="Skywall">Skywall</option><option value="Smolderthorn">Smolderthorn</option><option value="Spinebreaker">Spinebreaker</option><option value="Spirestone">Spirestone</option><option value="Staghelm">Staghelm</option><option value="Steamwheedle Cartel">Steamwheedle Cartel</option><option value="Stonemaul">Stonemaul</option><option value="Stormrage">Stormrage</option><option value="Stormreaver">Stormreaver</option><option value="Stormscale">Stormscale</option><option value="Suramar">Suramar</option><option value="Tanaris">Tanaris</option><option value="Terenas">Terenas</option><option value="Terokkar">Terokkar</option><option value="Thaurissan">Thaurissan</option><option value="The Forgotten Coast">The Forgotten Coast</option><option value="The Scryers">The Scryers</option><option value="The Underbog">The Underbog</option><option value="The Venture Co">The Venture Co</option><option value="Thorium Brotherhood">Thorium Brotherhood</option><option value="Thrall">Thrall</option><option value="Thunderhorn">Thunderhorn</option><option value="Thunderlord">Thunderlord</option><option value="Tichondrius">Tichondrius</option><option value="Tol Barad">Tol Barad</option><option value="Tortheldrin">Tortheldrin</option><option value="Trollbane">Trollbane</option><option value="Turalyon">Turalyon</option><option value="Twisting Nether">Twisting Nether</option><option value="Uldaman">Uldaman</option><option value="Uldum">Uldum</option><option value="Undermine">Undermine</option><option value="Ursin">Ursin</option><option value="Uther">Uther</option><option value="Vashj">Vashj</option><option value="Vek'nilash">Vek'nilash</option><option value="Velen">Velen</option><option value="Warsong">Warsong</option><option value="Whisperwind">Whisperwind</option><option value="Wildhammer">Wildhammer</option><option value="Windrunner">Windrunner</option><option value="Winterhoof">Winterhoof</option><option value="Wyrmrest Accord">Wyrmrest Accord</option><option value="Ysera">Ysera</option><option value="Ysondre">Ysondre</option><option value="Zangarmarsh">Zangarmarsh</option><option value="Zul'jin">Zul'jin</option><option value="Zuluhed">Zuluhed</option></select>
+
+                            <div class="error"
+                                 ng-show="signup_form.realm.$dirty && signup_form.realm.$invalid">
+                                <small class="error" ng-show="signup_form.realm.$error.required">
+                                    Realm is required.
+                                </small>
+                                <small class="error" ng-show="signup_form.realm.$error.minlength">
+                                    Realm is required to be at least 2 characters
+                                </small>
+
+                                <small class="error small-fade-error"
+                                       ng-show="signup_form.realm.$error.maxlength">
+                                    Please write less than 1000 chars per field.
+                                </small>
+                            </div>
+                        </div>
+
+                        <div class="group-4">
+                            <label>Region</label>
+                            <select ng-model-options="{ updateOn: 'default', debounce: {'default': 500, 'blur': 0} }"
+                                    ng-model="signup.region" name="region" ng-minlength=2 required ng-maxlength="1000">
+                                <option value="">-- Region --</option>
+                                <option value="US">US</option>
+                                <option value="EU">EU</option>
+                                <option value="KR">KR</option>
+                                <option value="TW">TW</option>
+                                <option value="CN">CN</option>
+                            </select>
+
+                            <div class="error"
+                                 ng-show="signup_form.region.$dirty && signup_form.region.$invalid">
+                                <small class="error" ng-show="signup_form.region.$error.required">
+                                    Region is required.
+                                </small>
+                                <small class="error" ng-show="signup_form.region.$error.minlength">
+                                    Region is required to be at least 2 characters
+                                </small>
+
+                                <small class="error small-fade-error"
+                                       ng-show="signup_form.region.$error.maxlength">
+                                    Please write less than 1000 chars per field.
+                                </small>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-section" ng-show="signup.region && signup.realm && signup.name">
+                        <div class="small-12">
+                            <div>
+                                <label>Your Battle.net Profile Link</label>
+                                <a target="_blank" href="http://{{signup.region | lowercase}}.battle.net/wow/en/character/{{signup.realm | lowercase}}/{{signup.name | lowercase}}/advanced">http://{{signup.region | lowercase}}.battle.net/wow/en/character/{{signup.realm | lowercase}}/{{signup.name | lowercase}}/advanced</a>
+                            </div>
+                            <hr/>
+                        </div>
+                    </div>
+                    <div class="form-section">
+                        <div class="small-12">
+                            <div>
+                                <label>Logs Parse (wowhead or comparable URL)</label>
+                                <input ng-model-options="{ updateOn: 'default', debounce: {'default': 500, 'blur': 0} }"
+                                       type="text" placeholder="Logs" name="logs" ng-model="signup.logs"
+                                       required ng-maxlength="1000"/>
+
+                                <div class="error  error-fade"
+                                     ng-show="signup_form.logs.$dirty && signup_form.logs.$invalid">
+                                    <small class="error small-error-fade"
+                                           ng-show="signup_form.logs.$error.required">
+                                        Your logs are required.
+                                    </small>
+
+
+                                    <small class="error small-fade-error"
+                                           ng-show="signup_form.logs.$error.maxlength">
+                                        Please write less than 1000 chars per field.
+                                    </small>
+                                </div>                            </div>
+                            <hr/>
+                        </div>
+                    </div>
+                    <!-- Referral -->
+                    <div class="form-section">
+                        <div class="small-12">
+                            <label>Do you know anyone in Exiled Power? How did you hear about us?</label>
+							<textarea ng-trim="false" type="text"  placeholder="How did you hear about Exiled Power, and what made you consider applying?" name="referral"
+                                      ng-model-options="{ updateOn: 'default', debounce: {'default': 500, 'blur': 0} }"
+                                      ng-model="signup.referral" required ng-maxlength="1000"></textarea>
+                            <div class="error  error-fade"
+                                 ng-show="signup_form.referral.$dirty && signup_form.referral.$invalid">
+                                <small class="error small-error-fade"
+                                       ng-show="signup_form.referral.$error.required">
+                                    Referral is required.
+                                </small>
+
+                                <small class="error small-fade-error"
+                                       ng-show="signup_form.referral.$error.maxlength">
+                                    Please write less than 1000 chars per field.
+                                </small>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Previous -->
+                    <div class="form-section">
+                        <div class="small-12">
+                            <label>Previous Guild Experience</label>
+							<textarea ng-trim="false" type="text"  placeholder="Tell us about your last guild. Why are you choosing us over them? Do you have any references?"
+                                      name="previous"
+                                      ng-model-options="{ updateOn: 'default', debounce: {'default': 500, 'blur': 0} }"
+                                      ng-model="signup.previous" required ng-maxlength="1000"></textarea>
+                            <div class="error  error-fade"
+                                 ng-show="signup_form.previous.$dirty && signup_form.previous.$invalid">
+                                <small class="error small-error-fade"
+                                       ng-show="signup_form.previous.$error.required">
+                                    Field is required.
+                                </small>
+
+                                <small class="error small-fade-error"
+                                       ng-show="signup_form.previous.$error.maxlength">
+                                    Please write less than 1000 chars per field.
+                                </small>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- History -->
+                    <div class="form-section">
+                        <div class="small-12">
+                            <label>What's your raiding history like?</label>
+                            <textarea ng-trim="false" type="text"  placeholder="Tell us about the rest of your raiding history. What content have you cleared in the past? Which guilds did you do it with? Do you have any experience in guild leadership positions or other positions of responsibility?"
+                                      name="history"
+                                      ng-model-options="{ updateOn: 'default', debounce: {'default': 500, 'blur': 0} }"
+                                      ng-model="signup.history" required ng-maxlength="1000"></textarea>
+                            <div class="error  error-fade"
+                                 ng-show="signup_form.history.$dirty && signup_form.history.$invalid">
+                                <small class="error small-error-fade"
+                                       ng-show="signup_form.history.$error.required">
+                                    Raiding history is required.
+                                </small>
+
+                                <small class="error small-fade-error"
+                                       ng-show="signup_form.history.$error.maxlength">
+                                    Please write less than 1000 chars per field.
+                                </small>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Challenge -->
+                    <div class="form-section">
+                        <div class="small-12">
+                            <label>What Bosses Have You Found the Most Challenging?</label>
+                            <textarea ng-trim="false" type="text"  placeholder=""
+                                      name="challenge"
+                                      ng-model-options="{ updateOn: 'default', debounce: {'default': 500, 'blur': 0} }"
+                                      ng-model="signup.challenge" required ng-maxlength="1000"></textarea>
+                            <div class="error error-fade"
+                                 ng-show="signup_form.challenge.$dirty && signup_form.challenge.$invalid">
+                                <small class="error small-error-fade"
+                                       ng-show="signup_form.challenge.$error.required">
+                                    This question requires an answer.
+
+                                </small>
+
+                                <small class="error small-fade-error"
+                                       ng-show="signup_form.challenge.$error.maxlength">
+                                    Please write less than 1000 chars per field.
+                                </small>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Rewarding -->
+                    <div class="form-section">
+                        <div class="small-12">
+                            <label>What Do You Find Most Rewarding In the Game?</label>
+                            <textarea ng-trim="false" type="text"  placeholder=""
+                                      name="rewarding"
+                                      ng-model-options="{ updateOn: 'default', debounce: {'default': 500, 'blur': 0} }"
+                                      ng-model="signup.rewarding" required ng-maxlength="1000"></textarea>
+                            <div class="error  error-fade"
+                                 ng-show="signup_form.rewarding.$dirty && signup_form.rewarding.$invalid">
+                                <small class="error small-error-fade"
+                                       ng-show="signup_form.rewarding.$error.required">
+                                    This question requires an answer.
+
+                                </small>
+
+                                <small class="error small-fade-error"
+                                       ng-show="signup_form.rewarding.$error.maxlength">
+                                    Please write less than 1000 chars per field.
+                                </small>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Rewarding -->
+                    <div class="form-section">
+                        <div class="small-12">
+                            <label>What Do You Find The Most Frustrating?</label>
+                            <textarea ng-trim="false" type="text"  placeholder=""
+                                      name="frustrating"
+                                      ng-model-options="{ updateOn: 'default', debounce: {'default': 500, 'blur': 0} }"
+                                      ng-model="signup.frustrating" required ng-maxlength="1000"></textarea>
+                            <div class="error  error-fade"
+                                 ng-show="signup_form.frustrating.$dirty && signup_form.frustrating.$invalid">
+                                <small class="error small-error-fade"
+                                       ng-show="signup_form.frustrating.$error.required">
+                                    This question requires an answer.
+
+                                </small>
+
+                                <small class="error small-fade-error"
+                                       ng-show="signup_form.frustrating.$error.maxlength">
+                                    Please write less than 1000 chars per field.
+                                </small>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Different -->
+                    <div class="form-section">
+                        <div class="small-12">
+                            <label>How are you different?</label>
+                            <textarea ng-trim="false" type="text"  placeholder=""
+                                      name="different"
+                                      ng-model-options="{ updateOn: 'default', debounce: {'default': 500, 'blur': 0} }"
+                                      ng-model="signup.different" required ng-maxlength="1000"></textarea>
+                            <div class="error  error-fade"
+                                 ng-show="signup_form.different.$dirty && signup_form.different.$invalid">
+                                <small class="error small-error-fade"
+                                       ng-show="signup_form.different.$error.required">
+                                    This question requires an answer.
+
+                                </small>
+
+                                <small class="error small-fade-error"
+                                       ng-show="signup_form.different.$error.maxlength">
+                                    Please write less than 1000 chars per field.
+                                </small>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- How do you play -->
+                    <div class="form-section">
+                        <div class="small-12">
+                            <label>Tell us how you play your class, and how it makes you stand apart from others.</label>
+                            <textarea ng-trim="false" type="text"  placeholder=""
+                                      name="play"
+                                      ng-model-options="{ updateOn: 'default', debounce: {'default': 500, 'blur': 0} }"
+                                      ng-model="signup.play" required ng-maxlength="1000"></textarea>
+                            <div class="error  error-fade"
+                                 ng-show="signup_form.play.$dirty && signup_form.play.$invalid">
+                                <small class="error small-error-fade"
+                                       ng-show="signup_form.play.$error.required">
+                                    This question requires an answer.
+
+                                </small>
+
+                                <small class="error small-fade-error"
+                                       ng-show="signup_form.play.$error.maxlength">
+                                    Please write less than 1000 chars per field.
+                                </small>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Show me dem alts -->
+                    <div class="form-section">
+                        <div class="small-12">
+                            <label>Alts/Off-Spec</label>
+                            <textarea ng-trim="false" rows="3" type="text"  placeholder="Do you have any secondary specs or alternative characters that you feel you play at a similar level to your main? Do you have sufficient gear to be raid viable with these specs/characters?  What recent experience do you have playing them?"
+                                      name="alts"
+                                      ng-model-options="{ updateOn: 'default', debounce: {'default': 500, 'blur': 0} }"
+                                      ng-model="signup.alts" required ng-maxlength="1000"></textarea>
+                            <div class="error  error-fade"
+                                 ng-show="signup_form.alts.$dirty && signup_form.alts.$invalid">
+                                <small class="error small-error-fade"
+                                       ng-show="signup_form.alts.$error.required">
+                                    This question requires an answer.
+
+                                </small>
+
+                                <small class="error small-fade-error"
+                                       ng-show="signup_form.alts.$error.maxlength">
+                                    Please write less than 1000 chars per field.
+                                </small>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Who Are You? -->
+                    <div class="form-section">
+                        <div class="small-12">
+                            <label>Tell us about yourself</label>
+                            <textarea ng-trim="false" rows="3" type="text"  placeholder="Show us the man/woman behind the character. Impress us, make us laugh. Convince us we want you in our guild. If you don't take the time to sell yourself, there's no reason for us to want to take you. We've worked hard to make this a great place to raid and demand incoming candidates prove they're committed to continuing that."
+                                      name="whoareyou"
+                                      ng-model-options="{ updateOn: 'default', debounce: {'default': 500, 'blur': 0} }"
+                                      ng-model="signup.whoareyou" required ng-maxlength="1000"></textarea>
+                            <div class="error  error-fade"
+                                 ng-show="signup_form.whoareyou.$dirty && signup_form.whoareyou.$invalid">
+                                <small class="error small-error-fade"
+                                       ng-show="signup_form.whoareyou.$error.required">
+                                    This question requires an answer.
+                                </small>
+
+                                <small class="error small-fade-error"
+                                       ng-show="signup_form.whoareyou.$error.maxlength">
+                                    Please write less than 1000 chars per field.
+                                </small>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Who Are You? -->
+                    <div class="form-section">
+                        <div class="small-12">
+                            <label>Do You Have Any Questions For Us?</label>
+                            <textarea ng-trim="false" type="text"  placeholder=""
+                                      name="askus"
+                                      ng-model-options="{ updateOn: 'default', debounce: {'default': 500, 'blur': 0} }"
+                                      ng-model="signup.askus" required ng-maxlength="1000"></textarea>
+                            <div class="error  error-fade"
+                                 ng-show="signup_form.askus.$dirty && signup_form.askus.$invalid">
+                                <small class="error small-error-fade"
+                                       ng-show="signup_form.askus.$error.required">
+                                    This question requires an answer.
+                                </small>
+
+                                <small class="error small-fade-error"
+                                       ng-show="signup_form.askus.$error.maxlength">
+                                    Please write less than 1000 chars per field.
+                                </small>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Email Address -->
+                    <div class="form-section">
+                        <div class="group-4">
+                            <label>Email Opt-In</label>
+                            <input ng-model-options="{ updateOn: 'default', debounce: {'default': 500, 'blur': 0} }"
+                                   type="email" placeholder="you@somewhere.com" name="email" ng-model="signup.email"
+                                   ng-minlength=3 required  ng-maxlength="1000"/>
+                            <div class="error error-fade"
+                                 ng-show="signup_form.email.$dirty && signup_form.email.$invalid">
+                                <small class="error small-error-fade"
+                                       ng-show="signup_form.email.$error.required">
+                                    E-mail is required.
+                                </small>
+                                <small class="error small-error-fade  error-fade"
+                                       ng-show="signup_form.email.$error.minlength">
+                                    E-mail is required to be at least 3 characters
+                                </small>
+                                <small class="error small-error-fade" ng-show="signup_form.email.$error.email">
+                                    That is not a valid email. Please input a valid email.
+                                </small>
+                                <small class="error small-error-fade"
+                                       ng-show="signup_form.email.$error.maxlength">
+                                    E-mail cannot be longer than 20 characters
+                                </small>
+
+                                <small class="error small-fade-error"
+                                       ng-show="signup_form.email.$error.maxlength">
+                                    Please write less than 1000 chars per field.
+                                </small>
+                            </div>
+                        </div>
+                        <div class="group-4">
+                            <label>What is your Battle.NET ID?</label>
+                            <input ng-model-options="{ updateOn: 'default', debounce: {'default': 500, 'blur': 0} }"
+                                   type="text" placeholder="Battle.NET ID" name="bnetid" ng-model="signup.bnetid"
+                                   required  ng-maxlength="1000"/>
+
+                            <div class="error  error-fade"
+                                 ng-show="signup_form.bnetid.$dirty && signup_form.bnetid.$invalid">
+                                <small class="error small-error-fade"
+                                       ng-show="signup_form.bnetid.$error.required">
+                                    Your Battle.NET ID is required.
+                                </small>
+
+                                <small class="error small-fade-error"
+                                       ng-show="signup_form.bnetid.$error.maxlength">
+                                    Please write less than 1000 chars per field.
+                                </small>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Submit -->
+                    <div class="form-section">
+                        <div class="small-12">
+                            <button v-pressable type="submit" ng-disabled="signup_form.$invalid" class="button radius">
+                                <span>Submit</span>
+                                <v-ripple></v-ripple>
+                            </button>
+                        </div>
+
+                    </div>
+                </fieldset>
+            </form>
+        </div>
+        <div id="thanks" class="small-12 my-switch-animation" ng-switch-when="1">
+            <h5>Thank you {{signup.name}} for your submission.</h5>
+
+            <p>Someone will get back to you at <a href='mailto:{{signup.email}}'></a>{{signup.email}} or will contact you in game on {{signup.realm}}. We look forward to speaking to you soon.</p>
+        </div>
+
+    </div>
+</div>

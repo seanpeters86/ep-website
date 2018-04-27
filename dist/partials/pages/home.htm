@@ -1,0 +1,65 @@
+<div id="home-wrapper" ng-click="toggleBanner()">
+    <span class="navanimate" sm-scene="mixed1" duration="100%" offset="0" trigger-hook="1" ></span>
+    <div id="home-container" sm-scene="pin1" duration="100%" offset="0" trigger-hook="0" >
+        <div id="home-section"  sm-pin="pin1">
+            <div class="home-banner">
+                <div class="banner-content" sm-tween="mixed1" offset="home-wrapper" from-vars="{position:'relative', opacity: 1, top: '0px'}" to-vars="{opacity: 0, top: '-=120px'}">
+                    <div class="logo">
+                        <div class="logo-wrap">
+                            <div class="icon-wrap"><img src="/dist/img/EP_Icon.png" alt="Exiled Power"></div>
+                            <div class="text-wrap">
+                                <span>{{data.title}}</span><br>
+                                <span class="subtitle">{{data.subtitle}}</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="wowprogress" ng-controller="rankCtrl" sm-tween="mixed1" offset="home-wrapper" from-vars="{bottom: '0px'}" to-vars="{bottom: '360px'}">
+                    <header>WOW Progress</header>
+                    <span class="faction">US Arthas Horde</span>
+                    <span class="realm">Realm - {{rank.realm_rank}}th</span>
+                </div>
+                <div class="bg" sm-tween="mixed1" offset="home-wrapper" from-vars="{top: '0px'}" to-vars="{top: '-=60px'}">
+                    <div class="demo__slides" id="flickityId">
+                        <div class="demo__slide" data-ng-repeat="slide in data.slides.bg track by $index">
+                            <img data-ng-src="{{ ::slide }}" alt="" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<span sm-scene="home_navswap"  offset="0" trigger-hook="0"></span>
+<div id="boss-kills-wrapper" >
+    <div id="boss-kills-subcontainer" >
+        <div id="boss-kills-subsection" ui-sref="bosskills">
+            <span data-fittext data-fittext-min="14" data-fittext-load-delay="500" data-fittext-max="30">{{data.raid}}</span>
+            <img src="/dist/img/boss1-small.png" bh-src-responsive="[ [ '(min-width: 381px)', '/dist/img/boss1-med.png' ], [ '(min-width: 769px)', '/dist/img/boss1.png' ] ]" alt="Boss Kills">
+            <img src="/dist/img/boss2-small.png" bh-src-responsive="[ [ '(min-width: 381px)', '/dist/img/boss2-med.png' ], [ '(min-width: 769px)', '/dist/img/boss2.png' ] ]" alt="Boss Kills">
+        </div>
+    </div>
+</div>
+<div id="home-subwrapper" sm-scene="mixed2" offset="0" trigger-hook=".15" >
+    <div id="home-subcontainer">
+        <div id="sub-section">
+            <!--<span class="navanimate" ></span>-->
+            <div class="badge"  sm-tween="mixed2" from-vars="{position:'absolute', opacity: 0, top: '+=80px'}" to-vars="{opacity: 1, top: '0px'}"></div>
+            <div class="joinnow"></div>
+            <div class="legion" style="cursor:pointer;" ui-sref="recruitment" sm-tween="mixed2"  from-vars="{top: '+=100px'}" to-vars="{top: '0px'}" trigger-hook="0"></div>
+            <div class="bg" sm-tween="mixed2" offset="home-subwrapper" from-vars="{top: '0px'}" to-vars="{top: '0px'}"></div>
+        </div>
+    </div>
+</div>
+<span in-view="lineInView($index, $inview, $inviewpart, $event)" in-view-options="{ debounce: 1000 }"><br/></span>
+<div id="home-subpageslider-wrapper">
+    <div id="home-subpageslider-container">
+        <div class="homepage-subpageslider">
+            <div class="footer__slides" id="footerId">
+                <div class="footer__slide" data-ng-repeat="footerslide in data.footerslides track by $index">
+                    <a href="{{ ::footerslide.link }}"><img data-ng-src="{{ ::footerslide.img }}" alt="" /></a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

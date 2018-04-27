@@ -1,0 +1,24 @@
+<div id="roster-wrapper">
+	<div id="roster-container">
+		<span sm-scene="roster_navswap" offset="0" trigger-hook="0"></span>
+		<table class="tables">
+			<thead>
+			<tr>
+				<th ng-click="changeSorting('character.name')">{{::data.name}} <span ng-hide="sort.column == 'character.name'"><i class="fa fa-icon fa-sort"></i> </span><span ng-show="sort.column == 'character.name'"><span ng-show="!sort.descending"><i class="fa fa-icon fa-sort-up"></i></span><span ng-show="sort.descending"><i class="fa fa-icon fa-sort-down"></i></span></span></th>
+				<th ng-click="changeSorting('character.class')">{{::data.class}} <span ng-hide="sort.column == 'character.class'"><i class="fa fa-icon fa-sort"></i> </span><span ng-show="sort.column == 'character.class'"><span ng-show="!sort.descending"><i class="fa fa-icon fa-sort-up"></i></span><span ng-show="sort.descending"><i class="fa fa-icon fa-sort-down"></i></span></span></th>
+				<!--<th>{{::data.role}}</th>-->
+				<th ng-click="changeSorting('rank')">{{::data.rank}} <span ng-hide="sort.column == 'rank'"><i class="fa fa-icon fa-sort"></i> </span><span ng-show="sort.column == 'rank'"><span ng-show="!sort.descending"><i class="fa fa-icon fa-sort-up"></i></span><span ng-show="sort.descending"><i class="fa fa-icon fa-sort-down"></i></span></span></th>
+			</tr>
+			</thead>
+			<tbody>
+
+			<tr ng-repeat="item in filtereditemz | orderBy:sort.column:sort.descending" ng-click="armory(item.character.name)">
+			<td class="{{::item.character.class | wowClass}}"><span><img ng-src="http://render-api-us.worldofwarcraft.com/static-render/us/{{item.character.thumbnail}}" />&nbsp;&nbsp;&nbsp;{{item.character.name}}</span></td>
+			<td class="{{::item.character.class | wowClass}}">{{item.character.class | wowClass}}</td>
+			<!--<td class="{{::item.character.class | wowClass}}"><ilvl data-character="item.character.name"></ilvl></td>-->
+			<td class="{{::item.character.class | wowClass}}">{{item.rank | wowRank}}</td>
+			</tr>
+			</tbody>
+		</table>
+	</div>
+</div>

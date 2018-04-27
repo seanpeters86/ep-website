@@ -1,0 +1,58 @@
+{
+  "data": {
+    "home" : {
+      "title": "Exiled Power",
+      "subtitle": "US - Arthas - Horde",
+      "raid": "Exiled Power vs Mythic Antorus 8/11",
+      "slides": {
+        "bg":[
+		"/dist/img/guldan.jpg",
+		"/dist/img/161208_M_Xavius.jpg",
+		  "/dist/img/bg/Mythic_Archimonde.jpg"
+        ],
+        "header_slider_speed": 10000,
+        "footer_slider_speed": 4000
+      },
+      "footerslides": [
+        {"link": "http://www.askmrrobot.com/", "img": "/dist/img/fs-MrRobot_Slider.jpg"},
+        {"link": "bosskills/Jkt1iId7Xbc", "img": "/dist/img/MythicKill_Archimonde_Slider.jpg"},
+        {"link": "http://twitch.tv/exiledpowerus", "img": "/dist/img/fs-Twitch.jpg"},
+        {"link": "https://www.warcraftlogs.com/guilds/75984", "img": "/dist/img/warcraftlogs_banner.jpg"}
+      ]
+    },
+    "roster" : {
+      "title": "Mythic Team Roster",
+      "currentRosterText": "Weekly Mythic Roster (.xls)",
+      "currentRosterLink": "https://docs.google.com/spreadsheets/d/1Clq6mEklsLo5FWLd80D8togXN19MbBhVSci7inhre28/edit?usp=sharing",
+      "name": "Name",
+      "class": "Class",
+      "role": "iLVL",
+      "rank": "Rank"
+    },
+    "bosskills" : {
+      "title": "Boss Kills",
+      "startvideo": "Jkt1iId7Xbc",
+      "startsearch": "Exiled Power"
+    },
+    "recruitment" : {
+      "title": "Join Us | Apply Today"
+    },
+    "resources": {
+      "title": "Class Resources"
+    },
+    "error": {
+      "errortext": "This Page Does Not Exist!"
+    },
+    "twitch": {
+      "title": "Guild Streams",
+      "video": {
+        "id": [
+          "exiledpowerus",
+          "Publikpriest",
+		  "lalla1584",
+		  "sheil_tv"
+        ]
+      }
+    }
+  }
+}

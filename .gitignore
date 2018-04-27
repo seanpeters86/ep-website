@@ -1,0 +1,9 @@
+.well-known/
+cgi-bin/
+dev/
+jarvis/
+slackbots/
+.htaccess
+mail.php
+site.zip
+wordfence-waf.php

@@ -1,0 +1,40 @@
+<span sm-scene="bosskills_navswap" offset="0" trigger-hook="0"></span>
+
+<div id="bosskills-wrapper">
+	<div id="bosskills-container">
+		<div class="videoWrapper">
+			<youtube width="100%" height="100%" videoid="{{main.videoid}}"></youtube>
+		</div>
+		<hr class="subtle">
+
+		<div id="results">
+			<div class="video" data-ng-repeat="video in main.results" data-ng-click="playVideo(video.id)">
+				<img class="video-image" data-ng-src="{{ video.thumbnail }}">
+				<p class="video-title">{{ video.title }}</p>
+				<p class="video-author">{{ video.author }}</p>
+				<p class="video-description">{{ video.description }}</p>
+			</div>
+		</div>
+		<div class="searchbox">
+			<form id="search" data-ng-submit="search()">
+				<input id="query" name="q" type="text" placeholder="Search for a YouTube video" data-ng-model="main.query">
+				<button v-pressable id="submit" type="submit" alt="Search"><span>Search</span><v-ripple></v-ripple></button>
+			</form>
+			<div class="wowprogress" ng-controller="rankCtrl" sm-tween="mixed1" offset="home-wrapper" from-vars="{bottom: '0px'}" to-vars="{bottom: '360px'}">
+				<header>WOW Progress</header>
+				<span class="faction">US Arthas Horde</span>
+				<span class="realm">World Rank<span>{{rank.world_rank}}</span></span>
+				<span class="realm">US Rank<span>{{rank.area_rank}}</span></span>
+				<span class="realm">Realm Rank<span>{{rank.realm_rank}}</span></span>
+			</div>
+		</div>
+
+		<!--<button ng-click="main.sendControlEvent(main.YT_event.PLAY)">Send Play</button>
+		<button ng-click="main.sendControlEvent(main.YT_event.PAUSE)">Send Pause</button>
+		<button ng-click="main.sendControlEvent(main.YT_event.STOP)">Send Stop</button>-->
+
+
+	</div>
+</div>
+
+<!--<button ui-sref="bosskills({videoID:'b7mTPw0pv20'})">bosskills/PMt8EeotZY0</button>-->
