@@ -7,7 +7,7 @@
       "slides": {
         "bg":[
 		"/dist/img/aggramar.jpg",
-		"/dist/img/guldan.jpg",
+		"/dist/img/guldan.jpg"
         ],
         "header_slider_speed": 10000,
         "footer_slider_speed": 4000
