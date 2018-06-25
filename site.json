@@ -6,16 +6,13 @@
       "raid": "Exiled Power vs Mythic Antorus 8/11",
       "slides": {
         "bg":[
+		"/dist/img/aggramar.jpg",
 		"/dist/img/guldan.jpg",
-		"/dist/img/161208_M_Xavius.jpg",
-		  "/dist/img/bg/Mythic_Archimonde.jpg"
         ],
         "header_slider_speed": 10000,
         "footer_slider_speed": 4000
       },
       "footerslides": [
-        {"link": "http://www.askmrrobot.com/", "img": "/dist/img/fs-MrRobot_Slider.jpg"},
-        {"link": "bosskills/Jkt1iId7Xbc", "img": "/dist/img/MythicKill_Archimonde_Slider.jpg"},
         {"link": "http://twitch.tv/exiledpowerus", "img": "/dist/img/fs-Twitch.jpg"},
         {"link": "https://www.warcraftlogs.com/guilds/75984", "img": "/dist/img/warcraftlogs_banner.jpg"}
       ]
