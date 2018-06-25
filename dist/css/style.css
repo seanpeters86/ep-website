@@ -869,7 +869,9 @@ td.Demon.Hunter { color: #a330c9; }
 
 .classlist li img.monk { background: rgba(144, 238, 144, 0.5); }
 
-.classlist li img.death knight { background: rgba(255, 0, 0, 0.5); }
+.classlist li img.deathknight { background: rgba(255, 0, 0, 0.5); }
+
+.classlist li img.demonhunter { background: rgb(163, 48, 201, 0.5); }
 
 .classlist li img.paladin { background: rgba(255, 192, 203, 0.5); }
 
