@@ -57,6 +57,7 @@
                     <rowtoggle class="closed"></rowtoggle>
                     <ul>
                         <li><a ui-sref="deathknight">Death Knight</a></li>
+                        <li><a ui-sref="demonhunter">Demon Hunter</a></li>
                         <li><a ui-sref="druid">Druid</a></li>
                         <li><a ui-sref="mage">Mage</a></li>
                         <li><a ui-sref="monk">Monk</a></li>
