@@ -3,9 +3,10 @@
     "home" : {
       "title": "Exiled Power",
       "subtitle": "US - Arthas - Horde",
-      "raid": "Exiled Power vs Mythic Antorus 10/11",
+      "raid": "Exiled Power vs Mythic Antorus 11/11",
       "slides": {
         "bg":[
+		"/dist/img/mythic_argus.jpg",
 		"/dist/img/aggramar.jpg",
 		"/dist/img/guldan.jpg"
         ],
